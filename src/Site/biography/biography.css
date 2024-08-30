@@ -1,0 +1,75 @@
+@keyframes move-it {
+    0% {
+      background-position: initial;
+    }
+    100% {
+      background-position: 100px 0px;
+    }
+  }
+.bio {
+
+    padding: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 18px;
+    letter-spacing: 0.4px;
+    word-spacing: -1.8px;
+    color: #FFFFFF;
+    font-weight: 700;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: small-caps;
+    text-transform: none;
+}
+.bio-dark {
+    background-color: #0a2239;
+    color: aliceblue;
+    background: repeating-linear-gradient(
+        45deg,
+        #3e1f47,
+        #312244 5%,
+        #272640 5%,
+        #212f45 10%
+      );
+        background-size: 100px 100px;
+        animation: move-it 2s linear infinite;
+}
+.bio-light {
+    background-color: aliceblue;
+    color: #0a2239;
+    background: repeating-linear-gradient(
+        45deg,
+        #a5a58d,
+        #ddbea9 5%,
+        #f0efeb 5%,
+        #fff1e6 10%
+      );
+        background-size: 100px 100px;
+        animation: move-it 2s linear infinite;
+}
+
+.blog_bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar {
+    margin-bottom:20px ;
+}
+.avatar img {
+    width: 33%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.avatar img:hover {
+    width: 33%;
+    height: auto;
+transform: rotate(15deg);
+
+}
+.introduce h1 {
+    padding: 0 20px;
+}

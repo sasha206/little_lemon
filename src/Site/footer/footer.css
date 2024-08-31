@@ -3,12 +3,6 @@ Footer {
     justify-content:center;
     text-align: center;
     padding: 1%;
-}
-.Footer-dark {
-    background-color: #4d194d;
+    background-color: #495e57;
     color: rgb(255, 255, 255);
-}
-.Footer-light {
-    background-color: #b7b7a4;
-    color: rgb(30, 28, 28);
 }

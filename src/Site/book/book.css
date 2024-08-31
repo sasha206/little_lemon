@@ -1,0 +1,36 @@
+.bookContainer {
+    display: block;
+    align-items: center;
+    padding: 2rem;
+}
+.error {
+    color: red; 
+    font-size: 1em; 
+    font-family: "Karla", sans-serif;
+    font-optical-sizing: auto;
+    margin-bottom: 8px;
+}
+.formField {
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Karla", sans-serif;
+
+}
+.fieldForm {
+    font-size: large;
+    padding: 1rem;
+}
+header {
+    font-family: "Karla", sans-serif;
+    font-size:small;
+    text-align: center;
+    margin-bottom: 15px;
+}
+button {
+    padding: 10px;
+    border-radius: 15px;
+    background-color: #fbdabb;
+}
+button:hover {
+    background-color: #ff9f44;
+}

@@ -1,8 +1,7 @@
 import * as React from 'react';
 import Navigation from './Site/nav/Navigation';
-import Biography from './Site/biography/Biography';
-import FeaturedProjects from './Site/featured/FeaturedProjects';
-import Contact from './Site/contact/Contact';
+import Blog from './Site/blog/Blog';
+import Book from './Site/book/Book';
 import Footer from './Site/footer/Footer';
 import "./App.css";
 function App() {
@@ -10,9 +9,8 @@ function App() {
   return (
     <div className="App">
       <Navigation/>
-      <Biography/>
-      <FeaturedProjects/>
-      <Contact/>
+      <Blog/>
+      <Book/>
       <Footer/>
     </div>
   );

@@ -1,0 +1,36 @@
+.bio {
+
+    padding: 75px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    font-family: 'Markazi Text';
+    font-size:x-large;
+    align-items: center;
+    color: #edeefe;
+    background-image: url("imageDark.png");
+    background-position: center;
+}
+
+.blog_bio {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.avatar {
+    margin-bottom:20px ;
+}
+.avatar img {
+    width: 33%;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+.avatar img:hover {
+    width: 33%;
+    height: auto;
+transform: rotate(15deg);
+
+}
+.introduce h1 {
+    padding: 0 20px;
+}

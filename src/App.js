@@ -7,6 +7,7 @@ import Login from './project/site/login/login_page';
 import Order from './project/site/order/order_page';
 import Reservations from './project/site/reservations/reservations_page';
 import Menu from './project/site/menu/menu_page';
+import NewWork from './project/site/new_work/newWork_page';
 const router = createBrowserRouter([
   {
     path: '/',       
@@ -34,7 +35,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'menu',
-        element: <Menu/>
+        element: <Menu/>,
+      },
+      {
+        path: 'new_work',
+        element: <NewWork />
       }
     ],
   },

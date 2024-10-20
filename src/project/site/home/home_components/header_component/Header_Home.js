@@ -72,9 +72,9 @@ const ArticleHeader = styled.article`
     }
     `;
 const ImgHeader = styled.img`
-  width: 30%; /* Ширина изображения */
+  width: 30%; 
   height: auto;
-  border-radius: 10px; /* Закругленные углы */
+  border-radius: 10px; 
 `;
 
 const Header = () => {

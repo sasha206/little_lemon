@@ -1,7 +1,7 @@
 const WeekSpecials = () => {
     return(
         <div>
-            
+
         </div>
     )
 }

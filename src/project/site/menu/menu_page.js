@@ -60,7 +60,7 @@ const Menu = () => {
 
     useEffect(() => {
         // Получение данных с API
-        fetch('https://8nrpfe8x4e.execute-api.eu-north-1.amazonaws.com/prod') // Замените на ваш реальный URL
+        fetch('https://8nrpfe8x4e.execute-api.eu-north-1.amazonaws.com') // Замените на ваш реальный URL
             .then(response => response.json())
             .then(data => {
                 setDishes(data); // Сохраняем блюда в состоянии

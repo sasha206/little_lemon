@@ -63,6 +63,7 @@ const Menu = () => {
         fetch('https://8nrpfe8x4e.execute-api.eu-north-1.amazonaws.com') // Замените на ваш реальный URL
             .then(response => response.json())
             .then(data => {
+                console.log(data);
                 setDishes(data); // Сохраняем блюда в состоянии
                 setLoading(false); // Ожидание завершено
             })

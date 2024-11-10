@@ -8,6 +8,7 @@ import Order from './project/site/order/order_page';
 import Reservations from './project/site/reservations/reservations_page';
 import Menu from './project/site/menu/menu_page';
 import NewWork from './project/site/new_work/newWork_page';
+import AdminPage from './project/site_administrator/AdminPage';
 const router = createBrowserRouter([
   {
     path: '/',       
@@ -40,6 +41,10 @@ const router = createBrowserRouter([
       {
         path: 'new_work',
         element: <NewWork />
+      },
+      {
+        path: 'admin',
+        element: <AdminPage />,
       }
     ],
   },

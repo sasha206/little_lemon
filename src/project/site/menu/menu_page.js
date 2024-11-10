@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
 // Styled Components
@@ -54,38 +54,34 @@ const Price = styled.p`
 
 // Компонент меню
 const Menu = () => {
-    // Статический список блюд
-    const dishes = [
-        {
-            id: 1,
-            name: "Spaghetti Carbonara",
-            description: "Classic Italian pasta with a creamy egg sauce, pancetta, and parmesan.",
-            price: "$12.99",
-            image: "https://your-bucket-name.s3.amazonaws.com/carbonara.jpg"
-        },
-        {
-            id: 2,
-            name: "Margherita Pizza",
-            description: "Traditional pizza topped with fresh mozzarella, basil, and tomatoes.",
-            price: "$9.99",
-            image: "https://your-bucket-name.s3.amazonaws.com/margherita.jpg"
-        },
-        {
-            id: 3,
-            name: "Caesar Salad",
-            description: "Crisp romaine lettuce, Caesar dressing, croutons, and parmesan cheese.",
-            price: "$7.99",
-            image: "https://your-bucket-name.s3.amazonaws.com/caesar_salad.jpg"
-        }
-    ];
+    const [dishes, setDishes] = useState([]); // Состояние для хранения данных
+    const [loading, setLoading] = useState(true); // Состояние для загрузки
+    const [error, setError] = useState(null); // Состояние для ошибок
+
+    useEffect(() => {
+        // Получение данных с API
+        fetch('https://8nrpfe8x4e.execute-api.eu-north-1.amazonaws.com/prod') // Замените на ваш реальный URL
+            .then(response => response.json())
+            .then(data => {
+                setDishes(data); // Сохраняем блюда в состоянии
+                setLoading(false); // Ожидание завершено
+            })
+            .catch(error => {
+                setError(error); // Если ошибка
+                setLoading(false); // Ожидание завершено
+            });
+    }, []); // Пустой массив, чтобы запрос выполнялся только при монтировании компонента
+
+    if (loading) return <p>Loading...</p>; // Показываем загрузку
+    if (error) return <p>Error: {error.message}</p>; // Если ошибка
 
     return (
         <MenuContainer>
             <h1>Our Menu</h1>
             <MenuItems>
                 {dishes.map(dish => (
-                    <MenuItem key={dish.id}>
-                        <MenuItemImage src={dish.image} alt={dish.name} />
+                    <MenuItem key={dish.dish_id}>
+                        <MenuItemImage src={dish.image_url || 'https://placehold.it/250x250'} alt={dish.name} />
                         <MenuItemDetails>
                             <DishName>{dish.name}</DishName>
                             <DishDescription>{dish.description}</DishDescription>

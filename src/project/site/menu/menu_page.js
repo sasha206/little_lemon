@@ -52,7 +52,6 @@ const Price = styled.p`
     font-size: 16px;
 `;
 
-const api_URL = process.env.REACT_APP_getItemMenu_API;
 
 // Компонент меню
 const Menu = () => {

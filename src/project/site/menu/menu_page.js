@@ -52,6 +52,8 @@ const Price = styled.p`
     font-size: 16px;
 `;
 
+const api_URL = process.env.REACT_APP_getItemMenu_API;
+
 // Компонент меню
 const Menu = () => {
     const [dishes, setDishes] = useState([]); // Состояние для хранения данных
@@ -60,18 +62,17 @@ const Menu = () => {
 
     useEffect(() => {
         // Получение данных с API
-        fetch('https://8nrpfe8x4e.execute-api.eu-north-1.amazonaws.com/prod') // Замените на ваш реальный URL
-            .then(response => response.json())
-            .then(data => {
-                const dishes = JSON.parse(data.body); // Преобразование строки JSON в массив объектов
-                console.log(dishes); // Убедись, что это массив
-                setDishes(dishes); // Теперь можно использовать .map() на dishes
-                setLoading(false); // Ожидание завершено
-            })
-            .catch(error => {
-                setError(error); // Если ошибка
-                setLoading(false); // Ожидание завершено
-            });
+        fetch(api_URL) // Замените на рабочую ссылку
+        .then(response => response.json())
+        .then(data => {
+            setDishes(data); // Теперь данные корректно передаются в состояние dishes
+            setLoading(false);
+        })
+        .catch(error => {
+            setError(error);
+            setLoading(false);
+        });
+    
     }, []); // Пустой массив, чтобы запрос выполнялся только при монтировании компонента
 
     if (loading) return <p>Loading...</p>; // Показываем загрузку
